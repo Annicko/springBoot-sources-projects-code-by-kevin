@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.iotknowyou.MybatisTest.mapper.StudentMapper" >
+
+    <resultMap id="StudentList" type="com.iotknowyou.MybatisTest.entity.Student">
+        <result column="id" property="id" javaType="java.lang.Integer"></result>
+        <result column="name" property="name" javaType="java.lang.String"></result>
+        <result column="age" property="age" javaType="java.lang.Integer"></result>
+        <result column="number" property="number" javaType="java.lang.String"></result>
+    </resultMap>
+
+    <select id="getAll" resultMap="StudentList">
+        SELECT * FROM m_student
+    </select>
+
+
+</mapper>

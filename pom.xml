@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.iotknowyou</groupId>
+    <artifactId>springBoot-sources-projects-code-by-kevin</artifactId>
+    <version>${project.version}</version>
+    <modules>
+        <module>HelloWorld-code-by-kevin</module>
+        <module>SpringBootIntegrateThymeleaf-code-by-kevin</module>
+        <module>SpringBootIntegrateMybatis-code-by-kevin</module>
+        <module>SpringBootIntegrateRedis-code-by-kevin</module>
+    </modules>
+
+    <!-- 定义打包的方式 ,父模块的打包类型必须为 pom -->
+    <packaging>pom</packaging>
+
+    <name>springBoot-sources-projects-code-by-kevin</name>
+    <description>Practice the learned code</description>
+
+
+    <!-- parent指明继承关系，给出被继承的父项目的具体信息-->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.0.6.RELEASE</version>
+        <relativePath/>
+        <!-- lookup parent from repository -->
+    </parent>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+        <!-- 在properties中统一控制依赖包的版本，更清晰-->
+        <dubbo.version>2.5.3</dubbo.version>
+        <project.version>1.0-SNAPSHOT</project.version>
+    </properties>
+
+    <dependencyManagement>   <!--dependencyManagement用于管理依赖版本号-->
+        <dependencies>
+            <!-- 删除spring-boot-starter和spring-boot-starter-test，
+            因为parent中继承的祖先中已经有了，并且一般dependencyManagement管理的依赖都要写版本号 -->
+            <!--<dependency>-->
+            <!--<groupId>org.springframework.boot</groupId>-->
+            <!--<artifactId>spring-boot-starter</artifactId>-->
+            <!--</dependency>-->
+
+            <!--<dependency>-->
+            <!--<groupId>org.springframework.boot</groupId>-->
+            <!--<artifactId>spring-boot-starter-test</artifactId>-->
+            <!--<scope>test</scope>-->
+            <!--</dependency>-->
+
+            <!--新增后续dubbo项目中所需依赖，dubbo、zk-->
+            <!--<dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>dubbo</artifactId>
+                &lt;!&ndash;<version>2.5.3</version>&ndash;&gt;    &lt;!&ndash;使用properties中配置的版本号&ndash;&gt;
+                <version>${dubbo.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.springframework</groupId>
+                        <artifactId>spring</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>-->
+        </dependencies>
+
+    </dependencyManagement>
+
+    <!--该插件作用是打一个可运行的包，必须要写在需要打包的项目里。这里的父模块不需要打包运行，所以删掉该插件。-->
+    <!--<build>-->
+    <!--<plugins>-->
+    <!--<plugin>-->
+    <!--<groupId>org.springframework.boot</groupId>-->
+    <!--<artifactId>spring-boot-maven-plugin</artifactId>-->
+    <!--</plugin>-->
+    <!--</plugins>-->
+    <!--</build>-->
+
+</project>
