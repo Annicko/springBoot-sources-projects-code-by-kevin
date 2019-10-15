@@ -12,6 +12,8 @@
         <module>SpringBootIntegrateThymeleaf-code-by-kevin</module>
         <module>SpringBootIntegrateMybatis-code-by-kevin</module>
         <module>SpringBootIntegrateRedis-code-by-kevin</module>
+        <module>SpringBootIntegrateMybatisAndRedis</module>
+        <module>SpringBootIntegrateRabbitMQ</module>
     </modules>
 
     <!-- 定义打包的方式 ,父模块的打包类型必须为 pom -->
